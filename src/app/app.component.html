@@ -1,0 +1,48 @@
+<div class="jumbotron text-center">
+  <h1 class="display-5">Angular 7 Reactive Forms Tutorial</h1>
+</div>
+
+<div class="container">
+  <div class="row custom-wrapper">
+    <div class="col-md-12">
+      <!-- Form starts -->
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <label for="name">First Name:</label>
+        <input type="text" formControlName="fname" placeholder="Enter name" />
+        <br /><br />
+        <div *ngIf="lNameEmail1">
+          <label for="name">Last Name:</label>
+          <input type="text" formControlName="lname" placeholder="Enter name" />
+          <br /><br />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Enter email"
+          />
+        </div>
+        <div *ngIf="lNameEmail2">
+          <label for="name">Last Name2:</label>
+          <input
+            type="text"
+            formControlName="lname2"
+            placeholder="Enter name"
+          />
+
+          <br /><br />
+
+          <label for="email">Email2:</label>
+          <input
+            type="email"
+            formControlName="email2"
+            placeholder="Enter email"
+          />
+        </div>
+        <br /><br />
+        <button type="submit" [disabled]="!myForm.valid">Submit</button>
+        <button type="submit" (click)="formGrp1()">Form 1</button>
+        <button type="submit" (click)="formGrp2()">Form 2</button>
+      </form>
+    </div>
+  </div>
+</div>
